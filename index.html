@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curise Booking</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Header and Menu Section-->
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="active" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Booking Section-->
+    <main class="main-content container">
+
+        <div class="booking-content">
+            <h1>Cruise Queen</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book./p>
+        </div>
+
+
+        <div class="booking-form">
+            <h3>Book Ocean Time</h3>
+            <div class="input-group">
+                <label for="">Flying From</label>
+                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+            </div>
+            <div class="input-group">
+                <label for="">Flying To</label>
+                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+            </div>
+            <div class="inputs">
+                <div class="input-group">
+                    <label" for="">Departure</label>
+                        <input class="inp-style" type="date" name="">
+                </div>
+                <div class="input-group">
+                    <label for="">Return</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+            </div>
+            <div class="input-group f-class">
+                <div>
+                    <label for="">First Class ($150)</label>
+                    <input id="frist-class-tickets" class="inp-style inp-width" type="number" name="" value="0">
+                </div>
+                <div class="plus-minus-btn">
+                    <p>
+                        <span id="frist-class-increase-button" class="cursor-pointer">+</span>
+                        <span id="frist-class-decrease-button" class="cursor-pointer">-</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="input-group f-class">
+                <div>
+                    <label for="">Economy ($100)</label>
+                    <input class="inp-style inp-width" type="number" name="" id="economy-class-tickets" value="0">
+                </div>
+                <div class="plus-minus-btn">
+                    <p>
+                        <span id="economy-class-increase-button" class="cursor-pointer">+</span>
+                        <span id="economy-class-decrease-button" class="cursor-pointer">-</span>
+                    </p>
+                </div>
+            </div>
+            <div class="calculations">
+                <div class="amount">
+                    <div class="left">
+                        <p>Subtotal</p>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="sub-total">0</span></p>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="left">
+                        <p>Charge 10% VAT</p>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="tax-value">0</span></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="amount">
+                    <div class="left">
+                        <h4>Total</h4>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="total-price">0</span></p>
+                    </div>
+                </div>
+            </div>
+            <button id="book-now" class="btn-style cursor-pointer">Book Now</button>
+        </div>
+
+
+        <div class="pop-up" id="pop-up">
+            <h2 class="pop-up-title">Congratulations!! You have successfully purchased Your tickets </h2>
+            <table>
+                <tr>
+                    <td>
+                        <h4>You Have Parces <span class="color-green">Fris Class</span> Ticket <span></span> </h4>
+                    </td>
+                    <td>:</td>
+                    <td>
+                        <h4><span id="popup-frist-class-ticket-value"></span></h4>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>You Have Parces <span class="color-green">Economy Class</span> Ticket</h4>
+                    </td>
+                    <td> :</td>
+                    <td>
+                        <h4><span id="popup-economy-ticket-value"></span></h4>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Ticket Price </h4>
+                    </td>
+                    <td> :</td>
+                    <td>
+                        <h4>$<span id="popup-sub-total"></span></h4>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Tax </h4>
+                    </td>
+                    <td> :</td>
+                    <td>
+                        <h4>$<span id="popup-tax"></span></h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Total Price</h4>
+                    </td>
+                    <td> :</td>
+                    <td>
+                        <h4>$<span id="popup-total"></span></h4>
+                    </td>
+                </tr>
+            </table>
+
+            <button id="ok" class="ok-button cursor-pointer">OK</button>
+        </div>
+
+    </main>
+
+    <!-- Extranal JavaScript -->
+    <script src="main.js"></script>
+    <!--Thank You-->
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+// Frist-Class Incrice Button Event Handler
+document.getElementById("frist-class-incrice").addEventListener("click", function () {
+    ticketChangeHandler("frist-class", true);
+});
+
+// Frist-Class Decrease Button Event Handler
+document.getElementById("frist-class-decrease").addEventListener("click", function () {
+    ticketChangeHandler("frist-class", false);
+});
+
+// Economy-Class Incrice Button Event Handler
+document.getElementById("economy-class-incrice").addEventListener("click", function () {
+    ticketChangeHandler("economy-class", true);
+});
+
+// Economy-Class Decrease Button Event Handler
+document.getElementById("economy-class-decrease").addEventListener("click", function () {
+    ticketChangeHandler("economy-class", false);
+});
+
+
+//Ticket Change Function
+function ticketChangeHandler(id, incrice) {
+
+    //Take Ticket Input
+    const ticketInput = document.getElementById(id + "-tickets");
+    const numberOfTickets = parseInt(ticketInput.value);
+
+    let newFristClassTicketsCount = numberOfTickets;
+    
+    if (incrice == true) {
+        newFristClassTicketsCount = numberOfTickets + 1;
+    }
+    //If User Try To Book A Negetive Number 
+    if (incrice == false && newFristClassTicketsCount > 0) {
+        newFristClassTicketsCount = numberOfTickets - 1;
+    }
+    ticketInput.value = newFristClassTicketsCount;//Update Tiket Input Value
+
+    calculateTotal();//call total price && update price function
+}
+
+
+//Calculate Total Price And Update Parice
+function calculateTotal() {
+    const fristClassTicketsN = getInputValue("frist-class");//Frist Class Ticket Input Value
+    const economyClassTicketsN = getInputValue("economy-class");//Economy Class Ticket Input Value
+
+    const subTotalPrice = fristClassTicketsN * 150 + economyClassTicketsN * 100;//calculate subtotal
+    document.getElementById("sub-total").innerText = subTotalPrice;//update subtotal
+
+    const totalTax = subTotalPrice * 0.1;//calculate tax
+    document.getElementById("tax-value").innerText = totalTax;//update tax
+
+    const totalPrice = subTotalPrice + totalTax;//calculate total Price
+    document.getElementById("total-price").innerText = totalPrice;//update total price
+
+
+   
+}
+
+
+// Get Input Value By Passing ID
+function getInputValue(id) {
+    //get input value and convert in number
+    const inputValue = parseInt(document.getElementById(id + "-tickets").value);
+    return inputValue;
+}
+
+
+document.getElementById("book-now").addEventListener("click", function(){
+    document.getElementById("pop-up").style.display = "block";
+    // document.getElementById("popup-sub-total").innerText =  ;
+    const fristClassTicketsN = getInputValue("frist-class");//Frist Class Ticket Input Value
+    const economyClassTicketsN = getInputValue("economy-class");//Economy Class Ticket Input Value
+
+    const subTotalPrice = fristClassTicketsN * 150 + economyClassTicketsN * 100;//calculate subtotal
+    document.getElementById("popup-sub-total").innerText = subTotalPrice;//update subtotal
+
+    const totalTax = subTotalPrice * 0.1;//calculate tax
+    document.getElementById("tax-value").innerText = totalTax;//update tax
+
+    const totalPrice = subTotalPrice + totalTax;//calculate total Price
+    document.getElementById("total-price").innerText = totalPrice;//update total price
+
+});
+
+
+document.getElementById("close").addEventListener("click", function(){
+    document.getElementById("pop-up").style.display = "none";
+})
