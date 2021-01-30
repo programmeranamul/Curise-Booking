@@ -19,7 +19,6 @@ document.getElementById("economy-class-decrease-button").addEventListener("click
 });
 
 
-
 //Ticket Change Function
 function ticketChangeHandler(id, increase) {
 
@@ -71,19 +70,22 @@ function getInputValue(id) {
 
 //Show Pop Up Massege After Booking
 document.getElementById("book-now").addEventListener("click", function () {
-   
+
     //If User Buye Some Ticket
     if (getInputValue("frist-class") != 0 || getInputValue("economy-class") != 0) {
 
         document.getElementById("pop-up").style.display = "block";
+        
         //update popup box frist class ticket value
         document.getElementById("popup-frist-class-ticket-value").innerText = getInputValue("frist-class");
+
         //update popup box economy class ticket value
         document.getElementById("popup-economy-ticket-value").innerText = getInputValue("economy-class");
+
         //update popup box subtotal, tax, and total using function
         calculateAndUpdateTotal("popup-sub-total", "popup-tax", "popup-total");
-        
-    } 
+
+    }
     // If User try to booking without buy ticket
     else {
         alert("You need to buy at least 1 ticket for booking");
